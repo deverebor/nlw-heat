@@ -42,5 +42,5 @@ Você precisa de uma conta no [Figma](http://figma.com/) para acessar.
 
 ---
 <p align="center">
-  Made with 💜 by [Erebor](https://www.github.com/deverebor) 👋
+  Made with 💜 by Erebor 👋
 </p>
