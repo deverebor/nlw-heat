@@ -5,6 +5,7 @@ import { api } from '../../services/api'
 import styles from './styles.module.scss'
 
 import logoImg from '../../assets/logo.svg'
+import { Preloader } from '../Preloader'
 
 type Message = {
   id: string,
@@ -46,25 +47,39 @@ export function MessageList() {
     })
   }, [])
 
-  return (
-    <div className={styles.messageListWrapper}>
-      <img src={logoImg} alt="DoWhile 2021" />
+  async function isVisible() {
+    const [loading, setloading] = useState(false)
 
-      <ul className={styles.messageList}>
-        {messages.map(message => {
-          return (
-          <li key={message.id} className={styles.message}>
-            <p className={styles.messageContent}>{message.text}</p>
-            <div className={styles.messageUser}>
-              <div className={styles.userImage}>
-                <img src={message.user.avatar_url} alt={message.user.name} />
-              </div>
-              <span>{message.user.name}</span>
+      setInterval(() => {
+      if (messages.length > 0) {
+        return loading == false;
+        
+      }
+        return setloading(true);
+      }, 3000)
+  }
+
+  return (
+    <>
+      {!! isVisible() ? <div className={styles.messageListWrapper}>
+    <img src={logoImg} alt="DoWhile 2021" />
+
+    <ul className={styles.messageList}>
+      {messages.map(message => {
+        return (
+        <li key={message.id} className={styles.message}>
+          <p className={styles.messageContent}>{message.text}</p>
+          <div className={styles.messageUser}>
+            <div className={styles.userImage}>
+              <img src={message.user.avatar_url} alt={message.user.name} />
             </div>
-          </li>
-          )
-        })}
-      </ul>
-    </div>
+            <span>{message.user.name}</span>
+          </div>
+        </li>
+        )
+      })}
+    </ul>
+  </div> : <Preloader />}
+    </>
   )
 }
