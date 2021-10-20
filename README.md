@@ -1,46 +1,60 @@
-<h1 align="center">
-    <img alt="DoWhile 2021" title="DoWhile 2021" src="https://user-images.githubusercontent.com/67246528/138088560-ad0dfd1c-1dbb-447f-9642-a8f3008695a8.png" />
-</h1>
+<h1 align="center">👨🏾‍🚀🚀 NextLevelWeek - Heat</h1>
 
-<p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-</p>
+<div align="center">
+
+  ![DoWhile](react_heat/src/assets/logo.svg)
+
+</div>
 
 
-## DoWhile 2021
+<h2>Índice</h2>
 
-<p  align="center">
-  <img src="https://user-images.githubusercontent.com/67246528/138088767-84309a13-0ca9-44d6-8df3-9bfb25731cb5.png"/>
-</p>
+- [⚙️ Tecnologias](#️-tecnologias)
+- [📖 Projeto](#-projeto)
+- [🖌️ Layout](#️-layout)
+- [🚀 Features de minha autoria](#-features-de-minha-autoria)
 
-<br>
+---
 
-## 🧪 Tecnologias
+<div  align="center">
+
+  ![DoWhile 2021](https://user-images.githubusercontent.com/67246528/138088767-84309a13-0ca9-44d6-8df3-9bfb25731cb5.png)
+
+</div>
+
+> Design da aplicação
+
+### ⚙️ Tecnologias
 
 Esse projeto foi feito com as seguintes tecnologias.
 
-- ReactJS
+- ReactTS
 - TypeScript
-- CSS Modules
+- SCSS
 - NodeJS
 - Prisma
 - Socket.io
 
-## 💻 Projeto
+### 📖 Projeto
 
-Aplicação fullstack feita para o evento DoWhile 2021 com comunicação real time, na NLW da Rocketseat.
+Aplicação fullstack feita no NLW para o evento DoWhile 2021. A aplicação contém comunicação real time com o servidor node e integrações websockets.
 
-## 🔖 Layout
+### 🖌️ Layout
 
-Veja o layout no link abaixo (inspiração para o layout web):
+Disponibilizado pela Rocketseat e utilizado como base para o projeto:
 
-- [Layout](https://www.figma.com/community/file/1031699316177416916) 
+- [Layout](https://www.figma.com/community/file/1031699316177416916)
 
-Você precisa de uma conta no [Figma](http://figma.com/) para acessar.
+### 🚀 Features de minha autoria
+
+- Adicionado um tratamento visual para os erros e confirmações de envios usando o react-hot-toast.
+- Deploy da aplicação no Heroku(back-end) na Vercel(front-end).
+- Refatoração do contexto.
+- Novo design visual.
+- Preloader para a página;
+- Efeitos no carregamento dinâmico das imagens
 
 ---
 <p align="center">
-  Made with 💜 by Erebor 👋
+  Made with 💘 by Erebor 👋🏾
 </p>
