@@ -52,16 +52,16 @@ export function MessageList() {
 
       setInterval(() => {
       if (messages.length > 0) {
-        return loading == false;
+        return loading == true;
         
       }
-        return setloading(true);
+        return setloading(false);
       }, 3000)
   }
 
   return (
     <>
-      {!! isVisible() ? <div className={styles.messageListWrapper}>
+      {! isVisible() ? <Preloader /> : <div className={styles.messageListWrapper}>
     <img src={logoImg} alt="DoWhile 2021" />
 
     <ul className={styles.messageList}>
@@ -79,7 +79,7 @@ export function MessageList() {
         )
       })}
     </ul>
-  </div> : <Preloader />}
+  </div>}
     </>
   )
 }
