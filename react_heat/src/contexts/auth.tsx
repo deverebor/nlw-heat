@@ -8,15 +8,16 @@ type User = {
   avatar_url: string
 }
 
+type AuthContextData = {
+  user: User | null,
+  signInUrl: string,
+  signOut: () => void
+}
+
 export const AuthContext = createContext({} as AuthContextData)
 
 type AuthProviderProps = {
   children: ReactNode,
-}
-
-type AuthContextData = {
-  user: User | null,
-  signInUrl: string,
 }
 
 type AuthResponse = {
@@ -43,18 +44,25 @@ export function AuthProvider(props: AuthProviderProps) {
 
     localStorage.setItem('@dowhile:token', token)
 
+    api.defaults.headers.common.authorization = `Bearer ${token}`;
+
     setUser(user)
   }
 
+  function signOut(){
+    setUser(null)
+    localStorage.removeItem('@dowhile:token')
+  }
+
   useEffect(() => {
-    const token = localStorage.getItem('@dohile:token')
+    const token = localStorage.getItem('@dowhile:token')
 
-    if(token) {
-      api.defaults.headers.common.authorization = `Bearer ${token}`
+    if (token) {
+      api.defaults.headers.common.authorization = `Bearer ${token}`;
 
-        api.get('profile').then(response => {
-          console.log(response.data)
-        })
+      api.get<User>('profile').then(response => {
+        setUser(response.data)
+      });
     }
   }, [])
 
@@ -73,7 +81,7 @@ export function AuthProvider(props: AuthProviderProps) {
   }, [])
 
   return (
-    <AuthContext.Provider value={{ signInUrl, user }}>
+    <AuthContext.Provider value={{ signInUrl, user, signOut }}>
        {props.children}
     </AuthContext.Provider>
   )
